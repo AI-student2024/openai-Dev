@@ -1,0 +1,2516 @@
+2024-03-22 08:38:47.703 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:38:47.713 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:38:47.890 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 08:38:47.891 | DEBUG    | translator.pdf_translator:translate_pdf:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为markdown，记住是全部翻译为markdown，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:38:55.183 | INFO     | translator.pdf_translator:translate_pdf:55 - # 测试数据
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+
+这些样本包括一个markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中软件。
+
+## 文本测试
+快速的棕色狐狸跳过懒惰的狗。这个句子包含了英语字母表中的每个字母至少一次。全字母句经常被用来测试字体、键盘和其他与文本相关的工具。除了英语，许多其他语言也有全字母句。一些全字母句由于语言的独特特征而更难构造。
+
+## 表格测试
+2024-03-22 08:38:55.185 | DEBUG    | translator.pdf_translator:translate_pdf:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为markdown，记住是全部翻译为markdown，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:38:57.542 | INFO     | translator.pdf_translator:translate_pdf:55 - ```
+| Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+```
+2024-03-22 08:38:57.542 | DEBUG    | book.content:set_translation:61 - ```
+| Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+```
+2024-03-22 08:38:57.543 | DEBUG    | book.content:set_translation:75 - [['```'], ['Fruit', 'Color', 'Price (USD)'], ['-------------', '---------', '-------------'], ['Apple', 'Red', '1.20'], ['Banana', 'Yellow', '0.50'], ['Orange', 'Orange', '0.80'], ['Strawberry', 'Red', '2.50'], ['Blueberry', 'Blue', '3.00'], ['Kiwi', 'Green', '1.00'], ['Mango', 'Orange', '1.50'], ['Grape', 'Purple', '2.00'], ['```']]
+2024-03-22 08:38:57.543 | ERROR    | book.content:set_translation:83 - An error occurred during table translation: 1 columns passed, passed data had 3 columns
+2024-03-22 08:38:57.544 | INFO     | translator.pdf_translator:translate_pdf:61 - Skipping translation for image content at page 2, content 1
+2024-03-22 08:38:57.545 | INFO     | translator.writer:_save_translated_book_pdf:30 - pdf_file_path: tests/test.pdf
+2024-03-22 08:38:57.545 | INFO     | translator.writer:_save_translated_book_pdf:31 - 开始翻译: tests/test_translated.pdf
+2024-03-22 08:38:57.680 | INFO     | translator.writer:_save_translated_book_pdf:79 - Image added to story: tests/parserimages/page_2_image_0.png
+2024-03-22 08:38:57.731 | INFO     | translator.writer:_save_translated_book_pdf:89 - 翻译完成: tests/test_translated.pdf
+2024-03-22 08:40:18.315 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:40:18.319 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:40:18.447 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 08:40:18.448 | DEBUG    | translator.pdf_translator:translate_pdf:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为markdown，记住是全部翻译为markdown，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:40:23.113 | INFO     | translator.pdf_translator:translate_pdf:55 - # 测试数据
+这个数据集包含两个由OpenAI的AI语言模型ChatGPT提供的测试样本。
+
+这些样本包括一个markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中软件。
+
+## 文本测试
+快速的棕色狐狸跳过懒狗。这个全字母句至少包含了英语字母表中的每个字母。全字母句经常用于测试字体、键盘和其他文本相关工具。除了英语之外，许多其他语言也有全字母句。由于语言的独特特点，有些全字母句更难构造。
+
+## 表格测试
+2024-03-22 08:40:23.116 | DEBUG    | translator.pdf_translator:translate_pdf:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为markdown，记住是全部翻译为markdown，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:40:26.531 | INFO     | translator.pdf_translator:translate_pdf:55 - | Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+2024-03-22 08:40:26.532 | DEBUG    | book.content:set_translation:61 - | Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+2024-03-22 08:40:26.533 | DEBUG    | book.content:set_translation:75 - [['Fruit', 'Color', 'Price (USD)'], ['-------------', '---------', '-------------'], ['Apple', 'Red', '1.20'], ['Banana', 'Yellow', '0.50'], ['Orange', 'Orange', '0.80'], ['Strawberry', 'Red', '2.50'], ['Blueberry', 'Blue', '3.00'], ['Kiwi', 'Green', '1.00'], ['Mango', 'Orange', '1.50'], ['Grape', 'Purple', '2.00']]
+2024-03-22 08:40:26.533 | DEBUG    | book.content:set_translation:79 -            Fruit      Color    Price (USD)
+0  -------------  ---------  -------------
+1          Apple        Red           1.20
+2         Banana     Yellow           0.50
+3         Orange     Orange           0.80
+4     Strawberry        Red           2.50
+5      Blueberry       Blue           3.00
+6           Kiwi      Green           1.00
+7          Mango     Orange           1.50
+8          Grape     Purple           2.00
+2024-03-22 08:40:26.544 | INFO     | translator.pdf_translator:translate_pdf:61 - Skipping translation for image content at page 2, content 1
+2024-03-22 08:40:26.545 | INFO     | translator.writer:_save_translated_book_pdf:30 - pdf_file_path: tests/test.pdf
+2024-03-22 08:40:26.545 | INFO     | translator.writer:_save_translated_book_pdf:31 - 开始翻译: tests/test_translated.pdf
+2024-03-22 08:40:26.656 | INFO     | translator.writer:_save_translated_book_pdf:79 - Image added to story: tests/parserimages/page_2_image_0.png
+2024-03-22 08:40:26.707 | INFO     | translator.writer:_save_translated_book_pdf:89 - 翻译完成: tests/test_translated.pdf
+2024-03-22 08:45:07.429 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:45:07.434 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:45:07.562 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 08:45:07.563 | DEBUG    | translator.pdf_translator:translate_pdf:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为markdown，记住是全部翻译为markdown，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:45:12.737 | INFO     | translator.pdf_translator:translate_pdf:55 - # 测试数据
+
+这个数据集包含了两个测试样本，由OpenAI的AI语言模型ChatGPT提供。
+
+这些样本包括一个markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中翻译软件。
+
+## 文本测试
+
+快速的棕色狐狸跳过懒狗。这个全字母句包含了英语字母表中至少一次出现的每一个字母。全字母句经常用来测试字体、键盘和其他与文本相关的工具。除了英语，许多其他语言也有全字母句。由于语言的独特特征，有些全字母句更难构造。
+
+## 表格测试
+2024-03-22 08:45:12.740 | DEBUG    | translator.pdf_translator:translate_pdf:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为markdown，记住是全部翻译为markdown，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:45:14.950 | INFO     | translator.pdf_translator:translate_pdf:55 - | Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+2024-03-22 08:45:14.951 | DEBUG    | book.content:set_translation:61 - | Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+2024-03-22 08:45:14.951 | DEBUG    | book.content:set_translation:75 - [['Fruit', 'Color', 'Price (USD)'], ['-------------', '---------', '-------------'], ['Apple', 'Red', '1.20'], ['Banana', 'Yellow', '0.50'], ['Orange', 'Orange', '0.80'], ['Strawberry', 'Red', '2.50'], ['Blueberry', 'Blue', '3.00'], ['Kiwi', 'Green', '1.00'], ['Mango', 'Orange', '1.50'], ['Grape', 'Purple', '2.00']]
+2024-03-22 08:45:14.952 | DEBUG    | book.content:set_translation:79 -            Fruit      Color    Price (USD)
+0  -------------  ---------  -------------
+1          Apple        Red           1.20
+2         Banana     Yellow           0.50
+3         Orange     Orange           0.80
+4     Strawberry        Red           2.50
+5      Blueberry       Blue           3.00
+6           Kiwi      Green           1.00
+7          Mango     Orange           1.50
+8          Grape     Purple           2.00
+2024-03-22 08:45:14.956 | INFO     | translator.pdf_translator:translate_pdf:61 - Skipping translation for image content at page 2, content 1
+2024-03-22 08:45:14.957 | INFO     | translator.writer:_save_translated_book_pdf:30 - pdf_file_path: tests/test.pdf
+2024-03-22 08:45:14.957 | INFO     | translator.writer:_save_translated_book_pdf:31 - 开始翻译: tests/test_translated.pdf
+2024-03-22 08:45:15.067 | INFO     | translator.writer:_save_translated_book_pdf:79 - Image added to story: tests/parserimages/page_2_image_0.png
+2024-03-22 08:45:15.118 | INFO     | translator.writer:_save_translated_book_pdf:89 - 翻译完成: tests/test_translated.pdf
+2024-03-22 08:50:33.664 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:50:33.670 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:50:33.802 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 08:50:33.803 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为markdown，记住是全部翻译为markdown，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 08:50:41.836 | INFO     | translator.pdf_translator:translate_pdf:28 - # 测试数据
+这个数据集包含两个测试样本，由OpenAI的AI语言模型ChatGPT提供。
+这些样本包括一个markdown表格和一个英文文本段落，可以用来测试同时支持文本和表格格式的英译中翻译软件。
+文本测试
+快速的棕色狐狸跳过懒狗。这个全字母句包含了英语字母表中的每一个字母。全字母句经常被用来测试字体、键盘和其他与文本相关的工具。除了英语，许多其他语言也有全字母句。有些全字母句由于语言的独特特点更难构建。
+表格测试
+2024-03-22 08:50:41.839 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为markdown，记住是全部翻译为markdown，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 08:50:44.411 | INFO     | translator.pdf_translator:translate_pdf:28 - | Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+2024-03-22 08:50:44.412 | DEBUG    | book.content:set_translation:61 - | Fruit       | Color   | Price (USD) |
+|-------------|---------|-------------|
+| Apple       | Red     | 1.20        |
+| Banana      | Yellow  | 0.50        |
+| Orange      | Orange  | 0.80        |
+| Strawberry  | Red     | 2.50        |
+| Blueberry   | Blue    | 3.00        |
+| Kiwi        | Green   | 1.00        |
+| Mango       | Orange  | 1.50        |
+| Grape       | Purple  | 2.00        |
+2024-03-22 08:50:44.413 | DEBUG    | book.content:set_translation:75 - [['Fruit', 'Color', 'Price (USD)'], ['-------------', '---------', '-------------'], ['Apple', 'Red', '1.20'], ['Banana', 'Yellow', '0.50'], ['Orange', 'Orange', '0.80'], ['Strawberry', 'Red', '2.50'], ['Blueberry', 'Blue', '3.00'], ['Kiwi', 'Green', '1.00'], ['Mango', 'Orange', '1.50'], ['Grape', 'Purple', '2.00']]
+2024-03-22 08:50:44.414 | DEBUG    | book.content:set_translation:79 -            Fruit      Color    Price (USD)
+0  -------------  ---------  -------------
+1          Apple        Red           1.20
+2         Banana     Yellow           0.50
+3         Orange     Orange           0.80
+4     Strawberry        Red           2.50
+5      Blueberry       Blue           3.00
+6           Kiwi      Green           1.00
+7          Mango     Orange           1.50
+8          Grape     Purple           2.00
+2024-03-22 08:50:44.418 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 08:50:44.419 | INFO     | translator.writer:_save_translated_book_pdf:30 - pdf_file_path: tests/test.pdf
+2024-03-22 08:50:44.419 | INFO     | translator.writer:_save_translated_book_pdf:31 - 开始翻译: tests/test_translated.pdf
+2024-03-22 08:50:44.529 | INFO     | translator.writer:_save_translated_book_pdf:79 - Image added to story: tests/parserimages/page_2_image_0.png
+2024-03-22 08:50:44.580 | INFO     | translator.writer:_save_translated_book_pdf:89 - 翻译完成: tests/test_translated.pdf
+2024-03-22 09:00:39.970 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:00:39.974 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:00:40.104 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 09:00:40.105 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:00:48.240 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒狗。这个句子包含了英语字母表中的每个字母至少一次。句子是常用来测试字体、键盘和其他与文本相关的工具的。除了英语，还有许多其他语言的句子。由于语言的独特特征，有些句子更难构造。
+表格测试
+2024-03-22 09:00:48.243 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:00:51.473 | INFO     | translator.pdf_translator:translate_pdf:28 - [水果, 颜色, 价格（美元）] 
+[苹果, 红色, 1.20] 
+[香蕉, 黄色, 0.50] 
+[橙子, 橙色, 0.80] 
+[草莓, 红色, 2.50] 
+[蓝莓, 蓝色, 3.00] 
+[猕猴桃, 绿色, 1.00] 
+[芒果, 橙色, 1.50] 
+[葡萄, 紫色, 2.00]
+2024-03-22 09:00:51.474 | DEBUG    | book.content:set_translation:61 - [水果, 颜色, 价格（美元）] 
+[苹果, 红色, 1.20] 
+[香蕉, 黄色, 0.50] 
+[橙子, 橙色, 0.80] 
+[草莓, 红色, 2.50] 
+[蓝莓, 蓝色, 3.00] 
+[猕猴桃, 绿色, 1.00] 
+[芒果, 橙色, 1.50] 
+[葡萄, 紫色, 2.00]
+2024-03-22 09:00:51.475 | DEBUG    | book.content:set_translation:75 - [['[水果, 颜色, 价格（美元）]'], ['[苹果, 红色, 1.20]'], ['[香蕉, 黄色, 0.50]'], ['[橙子, 橙色, 0.80]'], ['[草莓, 红色, 2.50]'], ['[蓝莓, 蓝色, 3.00]'], ['[猕猴桃, 绿色, 1.00]'], ['[芒果, 橙色, 1.50]'], ['[葡萄, 紫色, 2.00]']]
+2024-03-22 09:00:51.475 | DEBUG    | book.content:set_translation:79 -   [水果, 颜色, 价格（美元）]
+0   [苹果, 红色, 1.20]
+1   [香蕉, 黄色, 0.50]
+2   [橙子, 橙色, 0.80]
+3   [草莓, 红色, 2.50]
+4   [蓝莓, 蓝色, 3.00]
+5  [猕猴桃, 绿色, 1.00]
+6   [芒果, 橙色, 1.50]
+7   [葡萄, 紫色, 2.00]
+2024-03-22 09:00:51.478 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 09:00:51.479 | INFO     | translator.writer:_save_translated_book_markdown:95 - pdf_file_path: tests/test.pdf
+2024-03-22 09:00:51.480 | INFO     | translator.writer:_save_translated_book_markdown:96 - 开始翻译: tests/test_translated.md
+2024-03-22 09:00:51.480 | INFO     | translator.writer:_save_translated_book_markdown:129 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 09:00:51.481 | INFO     | translator.writer:_save_translated_book_markdown:138 - 翻译完成: tests/test_translated.md
+2024-03-22 09:01:42.070 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:01:42.074 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:01:42.208 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 09:01:42.209 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:01:55.341 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ
+このデータセットには、OpenAIによるAI言語モデルChatGPTが提供する2つのテストサンプルが含まれています。
+これらのサンプルには、マークダウンテーブルと英語のテキストパッセージが含まれており、テキストおよびテーブル形式の両方をサポートする英中翻訳ソフトウェアをテストするために使用できます。
+テキストのテスト
+素早い茶色のキツネが怠け者の犬を飛び越えます。このパングラムには、英語のアルファベットのすべての文字が少なくとも1回含まれています。パングラムは、フォント、キーボード、およびその他のテキスト関連ツールをテストするためによく使用されます。英語に加えて、他の多くの言語にもパングラムがあります。一部のパングラムは、言語の固有の特性により構築するのが難しいものもあります。
+表のテスト
+2024-03-22 09:01:55.344 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:01:58.965 | INFO     | translator.pdf_translator:translate_pdf:28 - [フルーツ、色、価格（USD）] [りんご、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [苺、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ブドウ、紫、2.00]
+2024-03-22 09:01:58.966 | DEBUG    | book.content:set_translation:61 - [フルーツ、色、価格（USD）] [りんご、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [苺、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ブドウ、紫、2.00]
+2024-03-22 09:01:58.967 | DEBUG    | book.content:set_translation:75 - [['[フルーツ、色、価格（USD）] [りんご、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [苺、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ブドウ、紫、2.00]']]
+2024-03-22 09:01:58.970 | DEBUG    | book.content:set_translation:79 - Empty DataFrame
+Columns: [[フルーツ、色、価格（USD）] [りんご、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [苺、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ブドウ、紫、2.00]]
+Index: []
+2024-03-22 09:01:58.971 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 09:01:58.972 | INFO     | translator.writer:_save_translated_book_markdown:95 - pdf_file_path: tests/test.pdf
+2024-03-22 09:01:58.972 | INFO     | translator.writer:_save_translated_book_markdown:96 - 开始翻译: tests/test_translated.md
+2024-03-22 09:01:58.973 | INFO     | translator.writer:_save_translated_book_markdown:129 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 09:01:58.974 | INFO     | translator.writer:_save_translated_book_markdown:138 - 翻译完成: tests/test_translated.md
+2024-03-22 09:12:21.498 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:12:21.502 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:12:21.634 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 09:12:21.634 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为한국어，记住是全部翻译为한국어，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:12:27.496 | INFO     | translator.pdf_translator:translate_pdf:28 - 시험 데이터
+ChatGPT에 의해 제공된 두 가지 테스트 샘플을 포함하는 데이터 세트입니다
+OpenAI의 AI 언어 모델. 
+이 샘플에는 마크다운 테이블과 영어 텍스트 단락이 포함되어 있습니다. 이를 사용하여 
+텍스트 및 테이블 형식을 모두 지원하는 영어에서 한국어로 번역 소프트웨어를 테스트할 수 있습니다.
+텍스트 테스트
+빠른 갈색 여우가 나태한 개를 뛰어 넘습니다. 이 팡그램에는 영어 알파벳의 모든 글자가 적어도 한 번씩 포함되어 있습니다. 
+팡그램은 종종 글꼴, 키보드 및 기타 텍스트 관련 도구를 테스트하는 데 사용됩니다. 
+영어 외에도 다른 언어의 팡그램이 있습니다. 언어의 고유한 특성으로 인해 어떤 팡그램은 더 어렵게 구성될 수 있습니다.
+테이블 테스트
+2024-03-22 09:12:27.499 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为한국어，记住是全部翻译为한국어，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:12:33.126 | INFO     | translator.pdf_translator:translate_pdf:28 - [과일, 색상, 가격 (USD)]
+[사과, 빨강, 1.20]
+[바나나, 노랑, 0.50]
+[오렌지, 주황, 0.80]
+[딸기, 빨강, 2.50]
+[블루베리, 파랑, 3.00]
+[키위, 녹색, 1.00]
+[망고, 주황, 1.50]
+[포도, 보라, 2.00]
+2024-03-22 09:12:33.127 | DEBUG    | book.content:set_translation:61 - [과일, 색상, 가격 (USD)]
+[사과, 빨강, 1.20]
+[바나나, 노랑, 0.50]
+[오렌지, 주황, 0.80]
+[딸기, 빨강, 2.50]
+[블루베리, 파랑, 3.00]
+[키위, 녹색, 1.00]
+[망고, 주황, 1.50]
+[포도, 보라, 2.00]
+2024-03-22 09:12:33.128 | DEBUG    | book.content:set_translation:75 - [['[과일, 색상, 가격 (USD)]'], ['[사과, 빨강, 1.20]'], ['[바나나, 노랑, 0.50]'], ['[오렌지, 주황, 0.80]'], ['[딸기, 빨강, 2.50]'], ['[블루베리, 파랑, 3.00]'], ['[키위, 녹색, 1.00]'], ['[망고, 주황, 1.50]'], ['[포도, 보라, 2.00]']]
+2024-03-22 09:12:33.128 | DEBUG    | book.content:set_translation:79 -   [과일, 색상, 가격 (USD)]
+0     [사과, 빨강, 1.20]
+1    [바나나, 노랑, 0.50]
+2    [오렌지, 주황, 0.80]
+3     [딸기, 빨강, 2.50]
+4   [블루베리, 파랑, 3.00]
+5     [키위, 녹색, 1.00]
+6     [망고, 주황, 1.50]
+7     [포도, 보라, 2.00]
+2024-03-22 09:12:33.132 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 09:12:33.132 | INFO     | translator.writer:_save_translated_book_markdown:95 - pdf_file_path: tests/test.pdf
+2024-03-22 09:12:33.133 | INFO     | translator.writer:_save_translated_book_markdown:96 - 开始翻译: tests/test_translated.md
+2024-03-22 09:12:33.133 | INFO     | translator.writer:_save_translated_book_markdown:129 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 09:12:33.134 | INFO     | translator.writer:_save_translated_book_markdown:138 - 翻译完成: tests/test_translated.md
+2024-03-22 09:13:13.148 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:13:13.153 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:13:13.280 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 09:13:13.281 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:13:21.259 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可以用来测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒惰的狗。这个句子包含了英语字母表中的每个字母至少一次。句
+子是用来测试字体、键盘和其他与文本相关工具的常用手段。除了英语，许多其他语言也有句子。由于语言的独特特征，有些句子更难构建。
+表格测试
+2024-03-22 09:13:21.262 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:13:25.487 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果 | 颜色 | 价格（美元） |
+|------|------|------------|
+| 苹果 | 红色 | 1.20 |
+| 香蕉 | 黄色 | 0.50 |
+| 橙子 | 橙色 | 0.80 |
+| 草莓 | 红色 | 2.50 |
+| 蓝莓 | 蓝色 | 3.00 |
+| 猕猴桃 | 绿色 | 1.00 |
+| 芒果 | 橙色 | 1.50 |
+| 葡萄 | 紫色 | 2.00 |
+2024-03-22 09:13:25.487 | DEBUG    | book.content:set_translation:61 - | 水果 | 颜色 | 价格（美元） |
+|------|------|------------|
+| 苹果 | 红色 | 1.20 |
+| 香蕉 | 黄色 | 0.50 |
+| 橙子 | 橙色 | 0.80 |
+| 草莓 | 红色 | 2.50 |
+| 蓝莓 | 蓝色 | 3.00 |
+| 猕猴桃 | 绿色 | 1.00 |
+| 芒果 | 橙色 | 1.50 |
+| 葡萄 | 紫色 | 2.00 |
+2024-03-22 09:13:25.488 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格（美元）'], ['------', '------', '------------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 09:13:25.489 | DEBUG    | book.content:set_translation:79 -        水果      颜色        价格（美元）
+0  ------  ------  ------------
+1      苹果      红色          1.20
+2      香蕉      黄色          0.50
+3      橙子      橙色          0.80
+4      草莓      红色          2.50
+5      蓝莓      蓝色          3.00
+6     猕猴桃      绿色          1.00
+7      芒果      橙色          1.50
+8      葡萄      紫色          2.00
+2024-03-22 09:13:25.492 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 09:13:25.493 | INFO     | translator.writer:_save_translated_book_markdown:95 - pdf_file_path: tests/test.pdf
+2024-03-22 09:13:25.494 | INFO     | translator.writer:_save_translated_book_markdown:96 - 开始翻译: tests/test_translated.md
+2024-03-22 09:13:25.495 | INFO     | translator.writer:_save_translated_book_markdown:129 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 09:13:25.495 | INFO     | translator.writer:_save_translated_book_markdown:138 - 翻译完成: tests/test_translated.md
+2024-03-22 09:14:54.140 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:14:54.146 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:14:54.275 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 09:14:54.276 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:15:03.469 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据
+这个数据集包含了两个测试样本，由ChatGPT提供，这是由OpenAI开发的人工智能语言模型。
+
+这些样本包括一个Markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中翻译软件。
+
+文本测试
+快速的棕色狐狸跃过懒惰的狗。这个全字母句包含了英语字母表中的每个字母至少一次。全字母句通常用于测试字体、键盘和其他与文本相关的工具。除了英语之外，还有很多其他语言的全字母句。由于语言的独特特点，有些全字母句构造起来更加困难。
+
+表格测试
+2024-03-22 09:15:03.474 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:15:07.440 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果      | 颜色   | 价格（美元） |
+|-----------|--------|------------|
+| 苹果     | 红色   | 1.20       |
+| 香蕉     | 黄色   | 0.50       |
+| 橙子     | 橙色   | 0.80       |
+| 草莓     | 红色   | 2.50       |
+| 蓝莓     | 蓝色   | 3.00       |
+| 猕猴桃   | 绿色   | 1.00       |
+| 芒果     | 橙色   | 1.50       |
+| 葡萄     | 紫色   | 2.00       |
+2024-03-22 09:15:07.440 | DEBUG    | book.content:set_translation:61 - | 水果      | 颜色   | 价格（美元） |
+|-----------|--------|------------|
+| 苹果     | 红色   | 1.20       |
+| 香蕉     | 黄色   | 0.50       |
+| 橙子     | 橙色   | 0.80       |
+| 草莓     | 红色   | 2.50       |
+| 蓝莓     | 蓝色   | 3.00       |
+| 猕猴桃   | 绿色   | 1.00       |
+| 芒果     | 橙色   | 1.50       |
+| 葡萄     | 紫色   | 2.00       |
+2024-03-22 09:15:07.441 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格（美元）'], ['-----------', '--------', '------------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 09:15:07.442 | DEBUG    | book.content:set_translation:79 -             水果        颜色        价格（美元）
+0  -----------  --------  ------------
+1           苹果        红色          1.20
+2           香蕉        黄色          0.50
+3           橙子        橙色          0.80
+4           草莓        红色          2.50
+5           蓝莓        蓝色          3.00
+6          猕猴桃        绿色          1.00
+7           芒果        橙色          1.50
+8           葡萄        紫色          2.00
+2024-03-22 09:15:07.446 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 09:15:07.447 | INFO     | translator.writer:_save_translated_book_markdown:95 - pdf_file_path: tests/test.pdf
+2024-03-22 09:15:07.447 | INFO     | translator.writer:_save_translated_book_markdown:96 - 开始翻译: tests/test_translated.md
+2024-03-22 09:15:07.448 | INFO     | translator.writer:_save_translated_book_markdown:129 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 09:15:07.449 | INFO     | translator.writer:_save_translated_book_markdown:138 - 翻译完成: tests/test_translated.md
+2024-03-22 09:27:25.431 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 09:27:25.434 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 09:27:25.494 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 09:27:25.495 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为pdf，记住是全部翻译为pdf，并保持文本结构不变。将翻译结果按原文本格式呈现:TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 09:27:30.317 | INFO     | translator.pdf_translator:translate_pdf:28 - TestingData
+Texttesting
+文本图像包含视觉和语言信息。然而，现有的文本识别预训练技术主要集中在视觉表示学习或语言知识学习上。
+在本文中，我们提出了一种新颖的方法MaskOCR，将视觉和语言预训练统一在经典的编码器-解码器识别框架中。我们采用遮罩图像建模方法来预训练特征编码器，使用大量未标记的真实文本图像，这使我们能够学习到强大的视觉表示。
+Tabletesting
+Picturetesting
+2024-03-22 09:27:30.320 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为pdf，记住是全部翻译为pdf，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 09:27:31.956 | INFO     | translator.pdf_translator:translate_pdf:28 - | fruits | colors | prices |
+|--------|--------|--------|
+| apples | red    | 5.5    |
+| pear   | yellow | 3.73   |
+2024-03-22 09:27:31.958 | DEBUG    | book.content:set_translation:61 - | fruits | colors | prices |
+|--------|--------|--------|
+| apples | red    | 5.5    |
+| pear   | yellow | 3.73   |
+2024-03-22 09:27:31.958 | DEBUG    | book.content:set_translation:75 - [['fruits', 'colors', 'prices'], ['--------', '--------', '--------'], ['apples', 'red', '5.5'], ['pear', 'yellow', '3.73']]
+2024-03-22 09:27:31.959 | DEBUG    | book.content:set_translation:79 -      fruits    colors    prices
+0  --------  --------  --------
+1    apples       red       5.5
+2      pear    yellow      3.73
+2024-03-22 09:27:31.962 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 1, content 3
+2024-03-22 09:27:31.963 | INFO     | translator.writer:_save_translated_book_pdf:30 - pdf_file_path: C:/Users/zf/Desktop/guitest.pdf
+2024-03-22 09:27:31.963 | INFO     | translator.writer:_save_translated_book_pdf:31 - 开始翻译: C:/Users/zf/Desktop/guitest_translated.pdf
+2024-03-22 09:27:32.077 | INFO     | translator.writer:_save_translated_book_pdf:79 - Image added to story: C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 09:27:32.113 | INFO     | translator.writer:_save_translated_book_pdf:89 - 翻译完成: C:/Users/zf/Desktop/guitest_translated.pdf
+2024-03-22 09:39:30.118 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:39:30.125 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:39:30.197 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmp3_p13kb0/parserimages/page_2_image_0.png
+2024-03-22 09:39:30.199 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 09:39:34.728 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中软件。
+文本测试
+快速的棕色狐狸跳过懒狗。这个全字母句至少包含了英语字母表中的每个字母。全字母句经常用于测试字体、键盘和其他文本相关工具。除了英语，其他许多语言中也有全字母句。一些全字母句由于语言的独特特点而更难构造。
+表格测试
+2024-03-22 09:39:34.730 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 09:39:39.559 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果      | 颜色    | 价格(美元) |
+|-----------|--------|-----------|
+| 苹果      | 红色   | 1.20      |
+| 香蕉      | 黄色   | 0.50      |
+| 橙子      | 橙色   | 0.80      |
+| 草莓      | 红色   | 2.50      |
+| 蓝莓      | 蓝色   | 3.00      |
+| 猕猴桃    | 绿色   | 1.00      |
+| 芒果      | 橙色   | 1.50      |
+| 葡萄      | 紫色   | 2.00      |
+2024-03-22 09:39:39.559 | DEBUG    | book.content:set_translation:61 - | 水果      | 颜色    | 价格(美元) |
+|-----------|--------|-----------|
+| 苹果      | 红色   | 1.20      |
+| 香蕉      | 黄色   | 0.50      |
+| 橙子      | 橙色   | 0.80      |
+| 草莓      | 红色   | 2.50      |
+| 蓝莓      | 蓝色   | 3.00      |
+| 猕猴桃    | 绿色   | 1.00      |
+| 芒果      | 橙色   | 1.50      |
+| 葡萄      | 紫色   | 2.00      |
+2024-03-22 09:39:39.560 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格(美元)'], ['-----------', '--------', '-----------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 09:39:39.560 | DEBUG    | book.content:set_translation:79 -             水果        颜色       价格(美元)
+0  -----------  --------  -----------
+1           苹果        红色         1.20
+2           香蕉        黄色         0.50
+3           橙子        橙色         0.80
+4           草莓        红色         2.50
+5           蓝莓        蓝色         3.00
+6          猕猴桃        绿色         1.00
+7           芒果        橙色         1.50
+8           葡萄        紫色         2.00
+2024-03-22 09:39:39.564 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 09:39:39.566 | INFO     | translator.writer:_save_translated_book_pdf:30 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmp3_p13kb0\mytest.pdf
+2024-03-22 09:39:39.566 | INFO     | translator.writer:_save_translated_book_pdf:31 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmp3_p13kb0\mytest_translated.pdf
+2024-03-22 09:39:39.676 | INFO     | translator.writer:_save_translated_book_pdf:79 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmp3_p13kb0/parserimages/page_2_image_0.png
+2024-03-22 11:02:59.266 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:02:59.277 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:02:59.435 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmpdqfhe_9e/parserimages/page_2_image_0.png
+2024-03-22 11:02:59.436 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:03:05.379 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+该数据集包含由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中翻译软件。
+文本测试
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+表格测试
+2024-03-22 11:03:05.385 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:03:08.796 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit, Color, Price (USD)]
+[苹果, 红色, 1.20]
+[香蕉, 黄色, 0.50]
+[橙子, 橙色, 0.80]
+[草莓, 红色, 2.50]
+[蓝莓, 蓝色, 3.00]
+[猕猴桃, 绿色, 1.00]
+[芒果, 橙色, 1.50]
+[葡萄, 紫色, 2.00]
+2024-03-22 11:03:08.797 | DEBUG    | book.content:set_translation:61 - [Fruit, Color, Price (USD)]
+[苹果, 红色, 1.20]
+[香蕉, 黄色, 0.50]
+[橙子, 橙色, 0.80]
+[草莓, 红色, 2.50]
+[蓝莓, 蓝色, 3.00]
+[猕猴桃, 绿色, 1.00]
+[芒果, 橙色, 1.50]
+[葡萄, 紫色, 2.00]
+2024-03-22 11:03:08.798 | DEBUG    | book.content:set_translation:75 - [['[Fruit, Color, Price (USD)]'], ['[苹果, 红色, 1.20]'], ['[香蕉, 黄色, 0.50]'], ['[橙子, 橙色, 0.80]'], ['[草莓, 红色, 2.50]'], ['[蓝莓, 蓝色, 3.00]'], ['[猕猴桃, 绿色, 1.00]'], ['[芒果, 橙色, 1.50]'], ['[葡萄, 紫色, 2.00]']]
+2024-03-22 11:03:08.799 | DEBUG    | book.content:set_translation:79 -   [Fruit, Color, Price (USD)]
+0              [苹果, 红色, 1.20]
+1              [香蕉, 黄色, 0.50]
+2              [橙子, 橙色, 0.80]
+3              [草莓, 红色, 2.50]
+4              [蓝莓, 蓝色, 3.00]
+5             [猕猴桃, 绿色, 1.00]
+6              [芒果, 橙色, 1.50]
+7              [葡萄, 紫色, 2.00]
+2024-03-22 11:03:08.803 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 11:03:08.804 | INFO     | translator.writer:_save_translated_book_pdf:31 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmpdqfhe_9e\mytest.pdf
+2024-03-22 11:03:08.805 | INFO     | translator.writer:_save_translated_book_pdf:32 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmpdqfhe_9e\mytest_translated.pdf
+2024-03-22 11:03:08.988 | INFO     | translator.writer:_save_translated_book_pdf:96 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmpdqfhe_9e/parserimages/page_2_image_0.png
+2024-03-22 11:11:50.798 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:11:50.807 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:11:50.925 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmp3_3_a3wz/parserimages/page_2_image_0.png
+2024-03-22 11:11:50.926 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:11:56.538 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。 
+这些样本包括一个Markdown表格和一段英文文本，可以用来测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒惰的狗。这个全字句至少包含了英语字母表中的每一个字母。全字句通常用来测试字体、键盘和其他与文本相关的工具。除了英语，还有许多其他语言的全字句。由于语言的独特特征，有些全字句更难构成。
+表格测试
+2024-03-22 11:11:56.541 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:11:59.334 | INFO     | translator.pdf_translator:translate_pdf:28 - 果实  颜色  价格(USD) 
+苹果  红色  1.20 
+香蕉  黄色  0.50 
+橙子  橙色  0.80 
+草莓  红色  2.50 
+蓝莓  蓝色  3.00 
+猕猴桃  绿色  1.00 
+芒果  橙色  1.50 
+葡萄  紫色  2.00
+2024-03-22 11:11:59.335 | DEBUG    | book.content:set_translation:61 - 果实  颜色  价格(USD) 
+苹果  红色  1.20 
+香蕉  黄色  0.50 
+橙子  橙色  0.80 
+草莓  红色  2.50 
+蓝莓  蓝色  3.00 
+猕猴桃  绿色  1.00 
+芒果  橙色  1.50 
+葡萄  紫色  2.00
+2024-03-22 11:11:59.336 | DEBUG    | book.content:set_translation:75 - [['果实  颜色  价格(USD)'], ['苹果  红色  1.20'], ['香蕉  黄色  0.50'], ['橙子  橙色  0.80'], ['草莓  红色  2.50'], ['蓝莓  蓝色  3.00'], ['猕猴桃  绿色  1.00'], ['芒果  橙色  1.50'], ['葡萄  紫色  2.00']]
+2024-03-22 11:11:59.337 | DEBUG    | book.content:set_translation:79 -   果实  颜色  价格(USD)
+0    苹果  红色  1.20
+1    香蕉  黄色  0.50
+2    橙子  橙色  0.80
+3    草莓  红色  2.50
+4    蓝莓  蓝色  3.00
+5   猕猴桃  绿色  1.00
+6    芒果  橙色  1.50
+7    葡萄  紫色  2.00
+2024-03-22 11:11:59.340 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 11:11:59.340 | INFO     | translator.writer:_save_translated_book_pdf:31 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmp3_3_a3wz\mytest.pdf
+2024-03-22 11:11:59.341 | INFO     | translator.writer:_save_translated_book_pdf:32 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmp3_3_a3wz\mytest_translated.pdf
+2024-03-22 11:11:59.462 | INFO     | translator.writer:_save_translated_book_pdf:98 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmp3_3_a3wz/parserimages/page_2_image_0.png
+2024-03-22 11:11:59.529 | INFO     | translator.writer:_save_translated_book_pdf:108 - 翻译完成: C:\Users\zf\AppData\Local\Temp\tmp3_3_a3wz\mytest_translated.pdf
+2024-03-22 11:35:05.799 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:35:05.804 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:35:05.879 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmpr_fmf6_8/parserimages/page_2_image_0.png
+2024-03-22 11:35:05.880 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:35:14.566 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可以用来测试支持文本和表格格式的英文到中文翻译软件。
+文本测试
+快速的棕色狐狸跳过懒惰的狗。这个全字母句包含了英语字母表中的每一个字母。全字母句经常被用来测试字体、键盘和其他与文本有关的工具。除了英语，许多其他语言中也有全字母句。有些全字母句由于语言的独特特点而更难构建。
+表格测试
+2024-03-22 11:35:14.573 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:35:18.606 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果       | 颜色   | 价格(美元) |
+|-----------|------|----------|
+| 苹果       | 红色   | 1.20     |
+| 香蕉       | 黄色   | 0.50     |
+| 橙子       | 橙色   | 0.80     |
+| 草莓       | 红色   | 2.50     |
+| 蓝莓       | 蓝色   | 3.00     |
+| 猕猴桃     | 绿色   | 1.00     |
+| 芒果       | 橙色   | 1.50     |
+| 葡萄       | 紫色   | 2.00     |
+2024-03-22 11:35:18.607 | DEBUG    | book.content:set_translation:61 - | 水果       | 颜色   | 价格(美元) |
+|-----------|------|----------|
+| 苹果       | 红色   | 1.20     |
+| 香蕉       | 黄色   | 0.50     |
+| 橙子       | 橙色   | 0.80     |
+| 草莓       | 红色   | 2.50     |
+| 蓝莓       | 蓝色   | 3.00     |
+| 猕猴桃     | 绿色   | 1.00     |
+| 芒果       | 橙色   | 1.50     |
+| 葡萄       | 紫色   | 2.00     |
+2024-03-22 11:35:18.608 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格(美元)'], ['-----------', '------', '----------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 11:35:18.609 | DEBUG    | book.content:set_translation:79 -             水果      颜色      价格(美元)
+0  -----------  ------  ----------
+1           苹果      红色        1.20
+2           香蕉      黄色        0.50
+3           橙子      橙色        0.80
+4           草莓      红色        2.50
+5           蓝莓      蓝色        3.00
+6          猕猴桃      绿色        1.00
+7           芒果      橙色        1.50
+8           葡萄      紫色        2.00
+2024-03-22 11:35:18.614 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 11:35:18.616 | INFO     | translator.writer:_save_translated_book_pdf:31 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmpr_fmf6_8\mytest.pdf
+2024-03-22 11:35:18.616 | INFO     | translator.writer:_save_translated_book_pdf:32 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmpr_fmf6_8\mytest_translated.pdf
+2024-03-22 11:35:18.744 | INFO     | translator.writer:_save_translated_book_pdf:101 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmpr_fmf6_8/parserimages/page_2_image_0.png
+2024-03-22 11:46:31.451 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:46:31.456 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:46:31.531 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmp08_7k2hl/parserimages/page_2_image_0.png
+2024-03-22 11:46:31.532 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 11:46:39.438 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了两个测试样本，由OpenAI的AI语言模型ChatGPT提供。
+这些样本包括一个Markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒狗。 这个全字母句至少包含了英语字母表中的每个字母。 全字母句通常用于测试字体、键盘和其他文本相关工具。 除了英语，许多其他语言也有全字母句。 由于语言的独特特征，一些全字母句更难构建。
+表格测试
+2024-03-22 11:46:39.441 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh-cn，记住是全部翻译为zh-cn，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 11:46:42.238 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit, Color, Price (USD)]
+[苹果, 红色, 1.20]
+[香蕉, 黄色, 0.50]
+[橙子, 橙色, 0.80]
+[草莓, 红色, 2.50]
+[蓝莓, 蓝色, 3.00]
+[猕猴桃, 绿色, 1.00]
+[芒果, 橙色, 1.50]
+[葡萄, 紫色, 2.00]
+2024-03-22 11:46:42.239 | DEBUG    | book.content:set_translation:61 - [Fruit, Color, Price (USD)]
+[苹果, 红色, 1.20]
+[香蕉, 黄色, 0.50]
+[橙子, 橙色, 0.80]
+[草莓, 红色, 2.50]
+[蓝莓, 蓝色, 3.00]
+[猕猴桃, 绿色, 1.00]
+[芒果, 橙色, 1.50]
+[葡萄, 紫色, 2.00]
+2024-03-22 11:46:42.239 | DEBUG    | book.content:set_translation:75 - [['[Fruit, Color, Price (USD)]'], ['[苹果, 红色, 1.20]'], ['[香蕉, 黄色, 0.50]'], ['[橙子, 橙色, 0.80]'], ['[草莓, 红色, 2.50]'], ['[蓝莓, 蓝色, 3.00]'], ['[猕猴桃, 绿色, 1.00]'], ['[芒果, 橙色, 1.50]'], ['[葡萄, 紫色, 2.00]']]
+2024-03-22 11:46:42.240 | DEBUG    | book.content:set_translation:79 -   [Fruit, Color, Price (USD)]
+0              [苹果, 红色, 1.20]
+1              [香蕉, 黄色, 0.50]
+2              [橙子, 橙色, 0.80]
+3              [草莓, 红色, 2.50]
+4              [蓝莓, 蓝色, 3.00]
+5             [猕猴桃, 绿色, 1.00]
+6              [芒果, 橙色, 1.50]
+7              [葡萄, 紫色, 2.00]
+2024-03-22 11:46:42.242 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 11:46:42.243 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmp08_7k2hl\mytest.pdf
+2024-03-22 11:46:42.244 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmp08_7k2hl\mytest_translated.pdf
+2024-03-22 11:46:42.364 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmp08_7k2hl/parserimages/page_2_image_0.png
+2024-03-22 11:46:42.432 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\AppData\Local\Temp\tmp08_7k2hl\mytest_translated.pdf
+2024-03-22 12:07:06.031 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 12:07:06.038 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 12:07:06.118 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmpt_cblyzo/parserimages/page_2_image_0.png
+2024-03-22 12:07:06.119 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为None，记住是全部翻译为None，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 12:07:08.479 | INFO     | translator.pdf_translator:translate_pdf:28 - None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+2024-03-22 12:07:08.482 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为None，记住是全部翻译为None，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 12:07:10.022 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit, Color, Price (USD)]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+2024-03-22 12:07:10.023 | DEBUG    | book.content:set_translation:61 - [Fruit, Color, Price (USD)]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+2024-03-22 12:07:10.023 | DEBUG    | book.content:set_translation:75 - [['[Fruit, Color, Price (USD)]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]']]
+2024-03-22 12:07:10.024 | DEBUG    | book.content:set_translation:79 -   [Fruit, Color, Price (USD)]
+0          [None, None, None]
+1          [None, None, None]
+2          [None, None, None]
+3          [None, None, None]
+4          [None, None, None]
+5          [None, None, None]
+6          [None, None, None]
+7          [None, None, None]
+2024-03-22 12:07:10.028 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 12:07:10.029 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmpt_cblyzo\mytest.pdf
+2024-03-22 12:07:10.029 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmpt_cblyzo\mytest_translated.pdf
+2024-03-22 12:07:10.153 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmpt_cblyzo/parserimages/page_2_image_0.png
+2024-03-22 12:07:10.221 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\AppData\Local\Temp\tmpt_cblyzo\mytest_translated.pdf
+2024-03-22 12:40:50.179 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 12:40:50.186 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 12:40:50.271 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/AppData/Local/Temp/tmph3jll3z_/parserimages/page_2_image_0.png
+2024-03-22 12:40:50.272 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为None，记住是全部翻译为None，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 12:41:10.640 | INFO     | translator.pdf_translator:translate_pdf:28 - None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+2024-03-22 12:41:10.643 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为None，记住是全部翻译为None，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 12:41:12.883 | INFO     | translator.pdf_translator:translate_pdf:28 - | Fruit       | Color  | Price (USD) |
+|-------------|--------|-------------|
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+2024-03-22 12:41:12.884 | DEBUG    | book.content:set_translation:61 - | Fruit       | Color  | Price (USD) |
+|-------------|--------|-------------|
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+| None        | None   | None        |
+2024-03-22 12:41:12.885 | DEBUG    | book.content:set_translation:75 - [['Fruit', 'Color', 'Price (USD)'], ['-------------', '--------', '-------------'], ['None', 'None', 'None'], ['None', 'None', 'None'], ['None', 'None', 'None'], ['None', 'None', 'None'], ['None', 'None', 'None'], ['None', 'None', 'None'], ['None', 'None', 'None'], ['None', 'None', 'None']]
+2024-03-22 12:41:12.886 | DEBUG    | book.content:set_translation:79 -            Fruit     Color    Price (USD)
+0  -------------  --------  -------------
+1           None      None           None
+2           None      None           None
+3           None      None           None
+4           None      None           None
+5           None      None           None
+6           None      None           None
+7           None      None           None
+8           None      None           None
+2024-03-22 12:41:12.890 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 12:41:12.891 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\AppData\Local\Temp\tmph3jll3z_\mytest.pdf
+2024-03-22 12:41:12.891 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\AppData\Local\Temp\tmph3jll3z_\mytest_translated.pdf
+2024-03-22 12:41:13.002 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/AppData/Local/Temp/tmph3jll3z_/parserimages/page_2_image_0.png
+2024-03-22 12:41:13.068 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\AppData\Local\Temp\tmph3jll3z_\mytest_translated.pdf
+2024-03-22 13:03:30.318 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 13:03:30.323 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 13:03:30.397 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 13:03:30.398 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为None，记住是全部翻译为None，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 13:03:33.174 | INFO     | translator.pdf_translator:translate_pdf:28 - None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+2024-03-22 13:03:33.177 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为None，记住是全部翻译为None，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 13:03:34.628 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit, Color, Price (USD)]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+2024-03-22 13:03:34.629 | DEBUG    | book.content:set_translation:61 - [Fruit, Color, Price (USD)]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+[None, None, None]
+2024-03-22 13:03:34.629 | DEBUG    | book.content:set_translation:75 - [['[Fruit, Color, Price (USD)]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]'], ['[None, None, None]']]
+2024-03-22 13:03:34.630 | DEBUG    | book.content:set_translation:79 -   [Fruit, Color, Price (USD)]
+0          [None, None, None]
+1          [None, None, None]
+2          [None, None, None]
+3          [None, None, None]
+4          [None, None, None]
+5          [None, None, None]
+6          [None, None, None]
+7          [None, None, None]
+2024-03-22 13:03:34.634 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 13:03:34.634 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest.pdf
+2024-03-22 13:03:34.635 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 13:03:34.757 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 13:03:34.823 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 13:10:05.098 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 13:10:05.103 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 13:10:05.187 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 13:10:05.188 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为None，记住是全部翻译为None，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 13:10:11.631 | INFO     | translator.pdf_translator:translate_pdf:28 - None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+2024-03-22 13:10:11.634 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为None，记住是全部翻译为None，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 13:10:13.691 | INFO     | translator.pdf_translator:translate_pdf:28 - | Fruit       | Color  | Price (USD) |
+|-------------|--------|-------------|
+| Apple       | Red    | None        |
+| Banana      | Yellow | None        |
+| Orange      | Orange | None        |
+| Strawberry  | Red    | None        |
+| Blueberry   | Blue   | None        |
+| Kiwi        | Green  | None        |
+| Mango       | Orange | None        |
+| Grape       | Purple | None        |
+2024-03-22 13:10:13.692 | DEBUG    | book.content:set_translation:61 - | Fruit       | Color  | Price (USD) |
+|-------------|--------|-------------|
+| Apple       | Red    | None        |
+| Banana      | Yellow | None        |
+| Orange      | Orange | None        |
+| Strawberry  | Red    | None        |
+| Blueberry   | Blue   | None        |
+| Kiwi        | Green  | None        |
+| Mango       | Orange | None        |
+| Grape       | Purple | None        |
+2024-03-22 13:10:13.692 | DEBUG    | book.content:set_translation:75 - [['Fruit', 'Color', 'Price (USD)'], ['-------------', '--------', '-------------'], ['Apple', 'Red', 'None'], ['Banana', 'Yellow', 'None'], ['Orange', 'Orange', 'None'], ['Strawberry', 'Red', 'None'], ['Blueberry', 'Blue', 'None'], ['Kiwi', 'Green', 'None'], ['Mango', 'Orange', 'None'], ['Grape', 'Purple', 'None']]
+2024-03-22 13:10:13.693 | DEBUG    | book.content:set_translation:79 -            Fruit     Color    Price (USD)
+0  -------------  --------  -------------
+1          Apple       Red           None
+2         Banana    Yellow           None
+3         Orange    Orange           None
+4     Strawberry       Red           None
+5      Blueberry      Blue           None
+6           Kiwi     Green           None
+7          Mango    Orange           None
+8          Grape    Purple           None
+2024-03-22 13:10:13.698 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 13:10:13.699 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest.pdf
+2024-03-22 13:10:13.699 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 13:10:13.817 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 13:10:13.883 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:25:53.838 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:25:53.846 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:25:54.002 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:25:54.004 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:26:02.618 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可以用来测试支持文本和表格格式的英译中翻译软件。
+文本测试
+快速的棕色狐狸跳过懒狗。这个全字母句包含了英语字母表中的每个字母至少一次。全字母句经常被用来测试字体、键盘和其他文本相关工具。除了英语，其他许多语言也有全字母句。由于语言的独特特点，有些全字母句构造起来更加困难。
+表格测试
+2024-03-22 14:26:02.622 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:26:06.240 | INFO     | translator.pdf_translator:translate_pdf:28 - [水果, 颜色, 价格 (美元)]
+[苹果, 红色, 1.20]
+[香蕉, 黄色, 0.50]
+[橙子, 橙色, 0.80]
+[草莓, 红色, 2.50]
+[蓝莓, 蓝色, 3.00]
+[猕猴桃, 绿色, 1.00]
+[芒果, 橙色, 1.50]
+[葡萄, 紫色, 2.00]
+2024-03-22 14:26:06.241 | DEBUG    | book.content:set_translation:61 - [水果, 颜色, 价格 (美元)]
+[苹果, 红色, 1.20]
+[香蕉, 黄色, 0.50]
+[橙子, 橙色, 0.80]
+[草莓, 红色, 2.50]
+[蓝莓, 蓝色, 3.00]
+[猕猴桃, 绿色, 1.00]
+[芒果, 橙色, 1.50]
+[葡萄, 紫色, 2.00]
+2024-03-22 14:26:06.242 | DEBUG    | book.content:set_translation:75 - [['[水果, 颜色, 价格 (美元)]'], ['[苹果, 红色, 1.20]'], ['[香蕉, 黄色, 0.50]'], ['[橙子, 橙色, 0.80]'], ['[草莓, 红色, 2.50]'], ['[蓝莓, 蓝色, 3.00]'], ['[猕猴桃, 绿色, 1.00]'], ['[芒果, 橙色, 1.50]'], ['[葡萄, 紫色, 2.00]']]
+2024-03-22 14:26:06.243 | DEBUG    | book.content:set_translation:79 -   [水果, 颜色, 价格 (美元)]
+0    [苹果, 红色, 1.20]
+1    [香蕉, 黄色, 0.50]
+2    [橙子, 橙色, 0.80]
+3    [草莓, 红色, 2.50]
+4    [蓝莓, 蓝色, 3.00]
+5   [猕猴桃, 绿色, 1.00]
+6    [芒果, 橙色, 1.50]
+7    [葡萄, 紫色, 2.00]
+2024-03-22 14:26:06.245 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 14:26:06.246 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest.pdf
+2024-03-22 14:26:06.247 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:26:06.359 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:26:06.424 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:30:44.363 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:30:44.369 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:30:44.449 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:30:44.450 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:30:58.052 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ-変更
+このデータセットには、OpenAIのAI言語モデルChatGPTが提供する2つのテストサンプルが含まれています。
+これらのサンプルには、マークダウンテーブルと英文テキストが含まれており、テキストとテーブルの形式の両方をサポートする
+英中翻訳ソフトウェアをテストするために使用することができます。
+テキストテスト
+速い茶色のキツネがのろまな犬を飛び越えます。このパングラムには、英語のアルファベットのすべての文字が少なくとも1回含まれています。パングラムは、フォント、キーボード、およびその他のテキスト関連ツールをテストするためによく使用されます。英語以外にも、多くの他の言語のパングラムがあります。ある種のパングラムは、言語の固有の特性により、構築がより難しいものもあります。
+テーブルの試験
+2024-03-22 14:30:58.054 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:31:00.382 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit、Color、価格 (USD)]
+[リンゴ、赤、1.20]
+[バナナ、黄、0.50]
+[オレンジ、オレンジ色、0.80]
+[苺、赤、2.50]
+[ブルーベリー、青、3.00]
+[キウイ、緑、1.00]
+[マンゴー、オレンジ色、1.50]
+[ブドウ、紫、2.00]
+2024-03-22 14:31:00.382 | DEBUG    | book.content:set_translation:61 - [Fruit、Color、価格 (USD)]
+[リンゴ、赤、1.20]
+[バナナ、黄、0.50]
+[オレンジ、オレンジ色、0.80]
+[苺、赤、2.50]
+[ブルーベリー、青、3.00]
+[キウイ、緑、1.00]
+[マンゴー、オレンジ色、1.50]
+[ブドウ、紫、2.00]
+2024-03-22 14:31:00.383 | DEBUG    | book.content:set_translation:75 - [['[Fruit、Color、価格 (USD)]'], ['[リンゴ、赤、1.20]'], ['[バナナ、黄、0.50]'], ['[オレンジ、オレンジ色、0.80]'], ['[苺、赤、2.50]'], ['[ブルーベリー、青、3.00]'], ['[キウイ、緑、1.00]'], ['[マンゴー、オレンジ色、1.50]'], ['[ブドウ、紫、2.00]']]
+2024-03-22 14:31:00.383 | DEBUG    | book.content:set_translation:79 -   [Fruit、Color、価格 (USD)]
+0           [リンゴ、赤、1.20]
+1           [バナナ、黄、0.50]
+2      [オレンジ、オレンジ色、0.80]
+3             [苺、赤、2.50]
+4        [ブルーベリー、青、3.00]
+5           [キウイ、緑、1.00]
+6      [マンゴー、オレンジ色、1.50]
+7           [ブドウ、紫、2.00]
+2024-03-22 14:31:00.387 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 14:31:00.389 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest.pdf
+2024-03-22 14:31:00.389 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:31:00.515 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:31:00.594 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:40:36.139 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:40:36.146 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:40:36.234 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:40:36.235 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:40:44.579 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ-修正
+このデータセットには、OpenAIのAI言語モデルであるChatGPTによって提供された2つのテストサンプルが含まれています。
+これらのサンプルには、マークダウンテーブルと英語テキストのパッセージが含まれており、テキストとテーブルの両方の形式をサポートする英中翻訳ソフトウェアをテストするために使用することができます。
+テキストテスト
+速い茶色のキツネがのろまな犬を飛び越える。このパングラムには、英語のアルファベットのすべての文字が少なくとも1回含まれています。パングラムは、フォント、キーボード、およびその他のテキスト関連ツールをテストするためによく使用されます。英語に加えて、多くの他の言語でもパングラムがあります。一部のパングラムは、言語の固有の特性のために構築するのが難しいです。
+テーブルテスト
+2024-03-22 14:40:44.581 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:40:48.981 | INFO     | translator.pdf_translator:translate_pdf:28 - [フルーツ, 色, 価格 (USD)] 
+[りんご, 赤, 1.20] 
+[バナナ, 黄色, 0.50] 
+[オレンジ, オレンジ色, 0.80] 
+[いちご, 赤, 2.50] 
+[ブルーベリー, 青, 3.00] 
+[キウイ, 緑, 1.00] 
+[マンゴー, オレンジ色, 1.50] 
+[ぶどう, 紫, 2.00]
+2024-03-22 14:40:48.983 | DEBUG    | book.content:set_translation:61 - [フルーツ, 色, 価格 (USD)] 
+[りんご, 赤, 1.20] 
+[バナナ, 黄色, 0.50] 
+[オレンジ, オレンジ色, 0.80] 
+[いちご, 赤, 2.50] 
+[ブルーベリー, 青, 3.00] 
+[キウイ, 緑, 1.00] 
+[マンゴー, オレンジ色, 1.50] 
+[ぶどう, 紫, 2.00]
+2024-03-22 14:40:48.983 | DEBUG    | book.content:set_translation:75 - [['[フルーツ, 色, 価格 (USD)]'], ['[りんご, 赤, 1.20]'], ['[バナナ, 黄色, 0.50]'], ['[オレンジ, オレンジ色, 0.80]'], ['[いちご, 赤, 2.50]'], ['[ブルーベリー, 青, 3.00]'], ['[キウイ, 緑, 1.00]'], ['[マンゴー, オレンジ色, 1.50]'], ['[ぶどう, 紫, 2.00]']]
+2024-03-22 14:40:48.984 | DEBUG    | book.content:set_translation:79 -    [フルーツ, 色, 価格 (USD)]
+0       [りんご, 赤, 1.20]
+1      [バナナ, 黄色, 0.50]
+2  [オレンジ, オレンジ色, 0.80]
+3       [いちご, 赤, 2.50]
+4    [ブルーベリー, 青, 3.00]
+5       [キウイ, 緑, 1.00]
+6  [マンゴー, オレンジ色, 1.50]
+7       [ぶどう, 紫, 2.00]
+2024-03-22 14:40:48.987 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 14:40:48.988 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest.pdf
+2024-03-22 14:40:48.989 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:40:49.107 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:40:49.183 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\uploads\mytest_translated.pdf
+2024-03-22 14:54:23.334 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:54:23.340 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:54:23.415 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:54:23.415 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 14:54:28.425 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ-Modfiy
+このデータセットには、OpenAIのAI言語モデルであるChatGPTによって提供された2つのテストサンプルが含まれています。
+これらのサンプルには、マークダウンテーブルと英文テキストが含まれており、テキストおよびテーブル形式の両方をサポートする英中翻訳ソフトウェアをテストするために使用することができます。
+テキストのテスト
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+テーブルのテスト
+2024-03-22 14:54:28.429 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 14:54:31.251 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit, Color, 価格（米ドル）]
+[りんご, 赤, 1.20]
+[バナナ, 黄色, 0.50]
+[オレンジ, オレンジ, 0.80]
+[苺, 赤, 2.50]
+[ブルーベリー, 青, 3.00]
+[キウイ, 緑, 1.00]
+[マンゴー, オレンジ, 1.50]
+[ぶどう, 紫, 2.00]
+2024-03-22 14:54:31.252 | DEBUG    | book.content:set_translation:61 - [Fruit, Color, 価格（米ドル）]
+[りんご, 赤, 1.20]
+[バナナ, 黄色, 0.50]
+[オレンジ, オレンジ, 0.80]
+[苺, 赤, 2.50]
+[ブルーベリー, 青, 3.00]
+[キウイ, 緑, 1.00]
+[マンゴー, オレンジ, 1.50]
+[ぶどう, 紫, 2.00]
+2024-03-22 14:54:31.252 | DEBUG    | book.content:set_translation:75 - [['[Fruit, Color, 価格（米ドル）]'], ['[りんご, 赤, 1.20]'], ['[バナナ, 黄色, 0.50]'], ['[オレンジ, オレンジ, 0.80]'], ['[苺, 赤, 2.50]'], ['[ブルーベリー, 青, 3.00]'], ['[キウイ, 緑, 1.00]'], ['[マンゴー, オレンジ, 1.50]'], ['[ぶどう, 紫, 2.00]']]
+2024-03-22 14:54:31.253 | DEBUG    | book.content:set_translation:79 -   [Fruit, Color, 価格（米ドル）]
+0          [りんご, 赤, 1.20]
+1         [バナナ, 黄色, 0.50]
+2      [オレンジ, オレンジ, 0.80]
+3            [苺, 赤, 2.50]
+4       [ブルーベリー, 青, 3.00]
+5          [キウイ, 緑, 1.00]
+6      [マンゴー, オレンジ, 1.50]
+7          [ぶどう, 紫, 2.00]
+2024-03-22 14:54:31.255 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 14:54:31.256 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest.pdf
+2024-03-22 14:54:31.257 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 14:54:31.399 | INFO     | translator.writer:_save_translated_book_pdf:104 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 14:54:31.486 | INFO     | translator.writer:_save_translated_book_pdf:114 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 15:06:19.222 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:06:19.227 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:06:19.300 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 15:06:19.301 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:06:26.053 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ-修正
+このデータセットには、OpenAIによるAI言語モデルであるChatGPTが提供する2つのテストサンプルが含まれています。
+これらのサンプルには、マークダウンテーブルと英語のテキストパッセージが含まれており、テキストとテーブルの両方の形式をサポートする英語から中国語への翻訳ソフトウェアをテストするのに使用できます。
+テキストのテスト
+素早い茶色のキツネがのろまな犬を飛び越える。このパングラムには、英語のアルファベットのすべての文字が少なくとも1回含まれています。パングラムは、フォント、キーボード、およびその他のテキスト関連ツールをテストするためによく使用されます。英語以外にも、多くの他の言語にもパングラムがあります。言語の固有の特性のために、いくつかのパングラムは構築するのが難しいものもあります。
+テーブルのテスト
+2024-03-22 15:06:26.056 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:06:30.449 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit、色、価格（USD）] [林檎、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [イチゴ、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ぶどう、紫、2.00]
+2024-03-22 15:06:30.449 | DEBUG    | book.content:set_translation:61 - [Fruit、色、価格（USD）] [林檎、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [イチゴ、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ぶどう、紫、2.00]
+2024-03-22 15:06:30.450 | DEBUG    | book.content:set_translation:75 - [['[Fruit、色、価格（USD）] [林檎、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [イチゴ、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ぶどう、紫、2.00]']]
+2024-03-22 15:06:30.451 | DEBUG    | book.content:set_translation:79 - Empty DataFrame
+Columns: [[Fruit、色、価格（USD）] [林檎、赤、1.20] [バナナ、黄色、0.50] [オレンジ、オレンジ、0.80] [イチゴ、赤、2.50] [ブルーベリー、青、3.00] [キウイ、緑、1.00] [マンゴー、オレンジ、1.50] [ぶどう、紫、2.00]]
+Index: []
+2024-03-22 15:06:30.453 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 15:06:30.453 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest.pdf
+2024-03-22 15:06:30.454 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 15:20:31.893 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:20:31.897 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:20:31.970 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 15:20:31.970 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:20:39.187 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ-修正
+このデータセットは、OpenAIによるAI言語モデルChatGPTが提供する2つのテストサンプルを含んでいます。
+これらのサンプルには、マークダウンテーブルと英語のテキストが含まれており、テキストとテーブルの両方の形式をサポートする英中翻訳ソフトウェアをテストするために使用することができます。
+テキストテスト
+速い茶色の狐がのろまな犬を飛び越える。このパングラムには英語のすべての文字が少なくとも1回含まれています。パングラムは、フォント、キーボード、および他のテキスト関連ツールをテストするためによく使用されます。英語に加えて、多くの他の言語にもパングラムがあります。言語の独自の特性のため、いくつかのパングラムは構築がより難しいです。
+テーブルテスト
+2024-03-22 15:20:39.190 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:20:43.012 | INFO     | translator.pdf_translator:translate_pdf:28 - [Fruit, Color, 価格（USD）] 
+[リンゴ, 赤, 1.20] 
+[バナナ, 黄色, 0.50] 
+[オレンジ, オレンジ, 0.80] 
+[苺, 赤, 2.50] 
+[ブルーベリー, 青, 3.00] 
+[キウイ, 緑, 1.00] 
+[マンゴー, オレンジ, 1.50] 
+[ぶどう, 紫, 2.00]
+2024-03-22 15:20:43.013 | DEBUG    | book.content:set_translation:61 - [Fruit, Color, 価格（USD）] 
+[リンゴ, 赤, 1.20] 
+[バナナ, 黄色, 0.50] 
+[オレンジ, オレンジ, 0.80] 
+[苺, 赤, 2.50] 
+[ブルーベリー, 青, 3.00] 
+[キウイ, 緑, 1.00] 
+[マンゴー, オレンジ, 1.50] 
+[ぶどう, 紫, 2.00]
+2024-03-22 15:20:43.014 | DEBUG    | book.content:set_translation:75 - [['[Fruit, Color, 価格（USD）]'], ['[リンゴ, 赤, 1.20]'], ['[バナナ, 黄色, 0.50]'], ['[オレンジ, オレンジ, 0.80]'], ['[苺, 赤, 2.50]'], ['[ブルーベリー, 青, 3.00]'], ['[キウイ, 緑, 1.00]'], ['[マンゴー, オレンジ, 1.50]'], ['[ぶどう, 紫, 2.00]']]
+2024-03-22 15:20:43.015 | DEBUG    | book.content:set_translation:79 -   [Fruit, Color, 価格（USD）]
+0          [リンゴ, 赤, 1.20]
+1         [バナナ, 黄色, 0.50]
+2      [オレンジ, オレンジ, 0.80]
+3            [苺, 赤, 2.50]
+4       [ブルーベリー, 青, 3.00]
+5          [キウイ, 緑, 1.00]
+6      [マンゴー, オレンジ, 1.50]
+7          [ぶどう, 紫, 2.00]
+2024-03-22 15:20:43.017 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 15:20:43.018 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest.pdf
+2024-03-22 15:20:43.019 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 15:20:43.129 | INFO     | translator.writer:_save_translated_book_pdf:117 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 15:20:43.194 | INFO     | translator.writer:_save_translated_book_pdf:127 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 15:22:31.634 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:22:31.637 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:22:31.683 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 15:22:31.683 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:23:01.916 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可以用来测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒惰的狗。 这句全字母句至少包含一次英文字母表中的每个字母。 全字母句经常用于测试字体、键盘和其他与文本相关的工具。 除了英语，许多其他语言也有全字母句。 一些全字母句由于语言的独特特征而更难构造。
+表格测试
+2024-03-22 15:23:01.919 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:23:05.047 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果       | 颜色   | 价格（美元） |
+|------------|--------|-------------|
+| 苹果       | 红色   | 1.20        |
+| 香蕉       | 黄色   | 0.50        |
+| 橙子       | 橙色   | 0.80        |
+| 草莓       | 红色   | 2.50        |
+| 蓝莓       | 蓝色   | 3.00        |
+| 猕猴桃     | 绿色   | 1.00        |
+| 芒果       | 橙色   | 1.50        |
+| 葡萄       | 紫色   | 2.00        |
+2024-03-22 15:23:05.047 | DEBUG    | book.content:set_translation:61 - | 水果       | 颜色   | 价格（美元） |
+|------------|--------|-------------|
+| 苹果       | 红色   | 1.20        |
+| 香蕉       | 黄色   | 0.50        |
+| 橙子       | 橙色   | 0.80        |
+| 草莓       | 红色   | 2.50        |
+| 蓝莓       | 蓝色   | 3.00        |
+| 猕猴桃     | 绿色   | 1.00        |
+| 芒果       | 橙色   | 1.50        |
+| 葡萄       | 紫色   | 2.00        |
+2024-03-22 15:23:05.048 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格（美元）'], ['------------', '--------', '-------------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 15:23:05.049 | DEBUG    | book.content:set_translation:79 -              水果        颜色         价格（美元）
+0  ------------  --------  -------------
+1            苹果        红色           1.20
+2            香蕉        黄色           0.50
+3            橙子        橙色           0.80
+4            草莓        红色           2.50
+5            蓝莓        蓝色           3.00
+6           猕猴桃        绿色           1.00
+7            芒果        橙色           1.50
+8            葡萄        紫色           2.00
+2024-03-22 15:23:05.053 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 15:23:05.053 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest.pdf
+2024-03-22 15:23:05.054 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 15:23:05.116 | INFO     | translator.writer:_save_translated_book_pdf:117 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 15:23:05.183 | INFO     | translator.writer:_save_translated_book_pdf:127 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 15:29:56.792 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:29:56.796 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:29:56.924 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 15:29:56.925 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 15:30:04.032 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据
+这个数据集包含了由OpenAI的AI语言模型ChatGPT提供的两个测试样本。
+这些样本包括一个Markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英文到中文翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒惰的狗。这句全字母句至少包含了英语字母表中的每一个字母。全字母句经常用于测试字体、键盘和其他与文本相关的工具。除了英语，还有许多其他语言中的全字母句。由于语言的独特特性，有些全字母句更难构造。
+表格测试
+2024-03-22 15:30:04.036 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 15:30:09.432 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果        | 颜色   | 价格 (美元) |
+|--------------|--------|------------|
+| 苹果        | 红色   | 1.20       |
+| 香蕉        | 黄色   | 0.50       |
+| 橙子        | 橙色   | 0.80       |
+| 草莓        | 红色   | 2.50       |
+| 蓝莓        | 蓝色   | 3.00       |
+| 猕猴桃      | 绿色   | 1.00       |
+| 芒果        | 橙色   | 1.50       |
+| 葡萄        | 紫色   | 2.00       |
+2024-03-22 15:30:09.434 | DEBUG    | book.content:set_translation:61 - | 水果        | 颜色   | 价格 (美元) |
+|--------------|--------|------------|
+| 苹果        | 红色   | 1.20       |
+| 香蕉        | 黄色   | 0.50       |
+| 橙子        | 橙色   | 0.80       |
+| 草莓        | 红色   | 2.50       |
+| 蓝莓        | 蓝色   | 3.00       |
+| 猕猴桃      | 绿色   | 1.00       |
+| 芒果        | 橙色   | 1.50       |
+| 葡萄        | 紫色   | 2.00       |
+2024-03-22 15:30:09.435 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格 (美元)'], ['--------------', '--------', '------------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 15:30:09.436 | DEBUG    | book.content:set_translation:79 -                水果        颜色       价格 (美元)
+0  --------------  --------  ------------
+1              苹果        红色          1.20
+2              香蕉        黄色          0.50
+3              橙子        橙色          0.80
+4              草莓        红色          2.50
+5              蓝莓        蓝色          3.00
+6             猕猴桃        绿色          1.00
+7              芒果        橙色          1.50
+8              葡萄        紫色          2.00
+2024-03-22 15:30:09.443 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 15:30:09.445 | INFO     | translator.writer:_save_translated_book_markdown:134 - pdf_file_path: tests/test.pdf
+2024-03-22 15:30:09.446 | INFO     | translator.writer:_save_translated_book_markdown:135 - 开始翻译: tests/test_translated.md
+2024-03-22 15:30:09.448 | INFO     | translator.writer:_save_translated_book_markdown:168 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 15:30:09.449 | INFO     | translator.writer:_save_translated_book_markdown:177 - 翻译完成: tests/test_translated.md
+2024-03-22 15:47:30.090 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 15:47:30.093 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 15:47:30.150 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 15:47:30.151 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh，记住是全部翻译为zh，并保持文本结构不变。将翻译结果按原文本格式呈现:TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 15:47:34.745 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据
+文本测试
+文本图像包含视觉和语言信息。然而，现有的文本识别预训练技术主要集中在视觉表示学习或语言知识学习上。
+在本文中，我们提出了一种新颖的方法MaskOCR来统一视觉和语言的预训练在经典的编码器-解码器识别框架中。我们采用了掩码图像建模方法来预训练特征编码器使用大量未标记的真实文本图像，这允许我们学习到强大的视觉表示。
+表测试
+图片测试
+2024-03-22 15:47:34.746 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh，记住是全部翻译为zh，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 15:47:36.735 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果   | 颜色  | 价格  |
+| ------| ----- | ------|
+| 苹果   | 红色  | 5.5   |
+| 梨     | 黄色  | 3.73  |
+2024-03-22 15:47:36.736 | DEBUG    | book.content:set_translation:61 - | 水果   | 颜色  | 价格  |
+| ------| ----- | ------|
+| 苹果   | 红色  | 5.5   |
+| 梨     | 黄色  | 3.73  |
+2024-03-22 15:47:36.736 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格'], ['------', '-----', '------'], ['苹果', '红色', '5.5'], ['梨', '黄色', '3.73']]
+2024-03-22 15:47:36.738 | DEBUG    | book.content:set_translation:79 -        水果     颜色      价格
+0  ------  -----  ------
+1      苹果     红色     5.5
+2       梨     黄色    3.73
+2024-03-22 15:47:36.741 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 1, content 3
+2024-03-22 15:47:36.742 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:/Users/zf/Desktop/guitest.pdf
+2024-03-22 15:47:36.743 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:/Users/zf/Desktop/guitest_translated.pdf
+2024-03-22 15:47:36.852 | INFO     | translator.writer:_save_translated_book_pdf:117 - Image added to story: C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 15:47:36.888 | INFO     | translator.writer:_save_translated_book_pdf:127 - 翻译完成: C:/Users/zf/Desktop/guitest_translated.pdf
+2024-03-22 16:47:30.060 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 16:47:30.063 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 16:47:30.118 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 16:47:30.118 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为zh，记住是全部翻译为zh，并保持文本结构不变。将翻译结果按原文本格式呈现:TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 16:47:42.177 | INFO     | translator.pdf_translator:translate_pdf_text:55 - 测试数据
+文本测试
+文本图像包含视觉和语言信息。然而，现有的文本识别预训练技术主要集中于视觉表示学习或语言知识学习。
+在本文中，我们提出了一种新颖的方法MaskOCR来统一视觉和语言预训练在经典的编码器-解码器识别框架中。我们采用了遮罩图像建模方法来预训练特征编码器，使用大量未标记的真实文本图像，这使我们能够学习到强大的视觉表示。
+表测试
+图片测试
+2024-03-22 16:47:42.179 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为zh，记住是全部翻译为zh，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 16:47:43.581 | INFO     | translator.pdf_translator:translate_pdf_text:55 - | 水果   | 颜色  | 价格  |
+| ------|------| ----- |
+| 苹果   | 红色  | 5.5   |
+| 梨     | 黄色  | 3.73  |
+2024-03-22 16:47:43.581 | DEBUG    | book.content:set_translation:61 - | 水果   | 颜色  | 价格  |
+| ------|------| ----- |
+| 苹果   | 红色  | 5.5   |
+| 梨     | 黄色  | 3.73  |
+2024-03-22 16:47:43.582 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格'], ['------', '------', '-----'], ['苹果', '红色', '5.5'], ['梨', '黄色', '3.73']]
+2024-03-22 16:47:43.583 | DEBUG    | book.content:set_translation:79 -        水果      颜色     价格
+0  ------  ------  -----
+1      苹果      红色    5.5
+2       梨      黄色   3.73
+2024-03-22 16:47:43.587 | INFO     | translator.pdf_translator:translate_pdf_text:63 - Skipping translation for image content at page 1, content 3
+2024-03-22 16:47:53.151 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 16:47:53.153 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 16:47:53.184 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 16:47:53.186 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为ja，记住是全部翻译为ja，并保持文本结构不变。将翻译结果按原文本格式呈现:TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 16:48:12.745 | INFO     | translator.pdf_translator:translate_pdf_text:55 - テストデータ
+Texttesting
+テキストイメージには視覚的および言語情報の両方が含まれています。 ただし、既存のテキスト認識のための事前訓練技術は、主に視覚表現の学習または言語知識の学習のいずれかに焦点を当てています。
+本論文では、古典的なエンコーダーデコーダー認識フレームワークでビジョンと言語の事前トレーニングを統一するための新しいアプローチMaskOCRを提案しています。 我々は、マスクされた画像モデリングアプローチを採用して、ラベルのない実際のテキストイメージの大規模なセットを使用して、特徴エンコーダーを事前トレーニングし、強力な視覚的表現を学習することができます。
+テーブルテスト
+画像のテスト
+2024-03-22 16:48:12.747 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为ja，记住是全部翻译为ja，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 16:48:14.123 | INFO     | translator.pdf_translator:translate_pdf_text:55 - [果物、色、価格] [りんご、赤、5.5] [梨、黄色、3.73]
+2024-03-22 16:48:14.123 | DEBUG    | book.content:set_translation:61 - [果物、色、価格] [りんご、赤、5.5] [梨、黄色、3.73]
+2024-03-22 16:48:14.123 | DEBUG    | book.content:set_translation:75 - [['[果物、色、価格] [りんご、赤、5.5] [梨、黄色、3.73]']]
+2024-03-22 16:48:14.125 | DEBUG    | book.content:set_translation:79 - Empty DataFrame
+Columns: [[果物、色、価格] [りんご、赤、5.5] [梨、黄色、3.73]]
+Index: []
+2024-03-22 16:48:14.126 | INFO     | translator.pdf_translator:translate_pdf_text:63 - Skipping translation for image content at page 1, content 3
+2024-03-22 16:48:26.690 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 16:48:26.693 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 16:48:26.724 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 16:48:26.724 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为ko，记住是全部翻译为ko，并保持文本结构不变。将翻译结果按原文本格式呈现:TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 16:48:41.835 | INFO     | translator.pdf_translator:translate_pdf_text:55 - TestingData
+Texttesting
+이미지 텍스트는 시각적 및 언어적 정보를 모두 포함하고 있습니다. 그러나 기존의 텍스트 인식 사전 훈련 기술은 주로 시각적 표현 학습이나 언어적 지식 학습에 중점을 두고 있습니다.
+본 논문에서는 비전과 언어 사전 훈련을 고전적 인코더-디코더 인식 프레임 워크에서 통합하기 위한 새로운 방법인 MaskOCR을 제안합니다. 우리는 대규모의 미분류된 실제 텍스트 이미지 집합을 사용하여 특징 인코더를 사전 훈련하기 위해 마스크 이미지 모델링 접근법을 채용하고 있습니다. 이를 통해 강력한 시각적 표현을 배울 수 있습니다.
+Tabletesting
+Picturetesting
+2024-03-22 16:48:41.837 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为ko，记住是全部翻译为ko，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 16:48:43.427 | INFO     | translator.pdf_translator:translate_pdf_text:55 - [과일, 색상, 가격] [사과, 빨간색, 5.5] [배, 노란색, 3.73]
+2024-03-22 16:48:43.428 | DEBUG    | book.content:set_translation:61 - [과일, 색상, 가격] [사과, 빨간색, 5.5] [배, 노란색, 3.73]
+2024-03-22 16:48:43.428 | DEBUG    | book.content:set_translation:75 - [['[과일, 색상, 가격] [사과, 빨간색, 5.5] [배, 노란색, 3.73]']]
+2024-03-22 16:48:43.429 | DEBUG    | book.content:set_translation:79 - Empty DataFrame
+Columns: [[과일, 색상, 가격] [사과, 빨간색, 5.5] [배, 노란색, 3.73]]
+Index: []
+2024-03-22 16:48:43.430 | INFO     | translator.pdf_translator:translate_pdf_text:63 - Skipping translation for image content at page 1, content 3
+2024-03-22 16:51:06.130 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 16:51:06.138 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 16:51:06.291 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 16:51:06.292 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为日本語，记住是全部翻译为日本語，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 16:51:21.411 | INFO     | translator.pdf_translator:translate_pdf:28 - テストデータ-Modfiy
+このデータセットには、OpenAIによるAI言語モデルChatGPTが提供する2つのテストサンプルが含まれています。
+これらのサンプルには、マークダウンテーブルと英語のテキストパッセージが含まれており、
+テキストとテーブルの両方の形式をサポートする英中翻訳ソフトウェアのテストに使用することができます。
+テキストのテスト
+速い茶色のキツネがのろまな犬を飛び越えます。このパングラムには、英語のアルファベットのすべての文字が少なくとも1回含まれています。パングラムは、フォント、キーボード、および他のテキスト関連ツールをテストするためにしばしば使用されます。英語以外にも、多くの他の言語でパングラムがあります。いくつかのパングラムは、言語の特性のために構築するのがより難しいです。
+テーブルのテスト
+2024-03-22 16:51:21.414 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为日本語，记住是全部翻译为日本語，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 16:51:24.382 | INFO     | translator.pdf_translator:translate_pdf:28 - [果物, 色, 価格 (USD)]
+[りんご, 赤, 1.20]
+[バナナ, 黄色, 0.50]
+[オレンジ, オレンジ, 0.80]
+[いちご, 赤, 2.50]
+[ブルーベリー, 青, 3.00]
+[キウイ, 緑, 1.00]
+[マンゴー, オレンジ, 1.50]
+[ぶどう, 紫, 2.00]
+2024-03-22 16:51:24.383 | DEBUG    | book.content:set_translation:61 - [果物, 色, 価格 (USD)]
+[りんご, 赤, 1.20]
+[バナナ, 黄色, 0.50]
+[オレンジ, オレンジ, 0.80]
+[いちご, 赤, 2.50]
+[ブルーベリー, 青, 3.00]
+[キウイ, 緑, 1.00]
+[マンゴー, オレンジ, 1.50]
+[ぶどう, 紫, 2.00]
+2024-03-22 16:51:24.383 | DEBUG    | book.content:set_translation:75 - [['[果物, 色, 価格 (USD)]'], ['[りんご, 赤, 1.20]'], ['[バナナ, 黄色, 0.50]'], ['[オレンジ, オレンジ, 0.80]'], ['[いちご, 赤, 2.50]'], ['[ブルーベリー, 青, 3.00]'], ['[キウイ, 緑, 1.00]'], ['[マンゴー, オレンジ, 1.50]'], ['[ぶどう, 紫, 2.00]']]
+2024-03-22 16:51:24.384 | DEBUG    | book.content:set_translation:79 -     [果物, 色, 価格 (USD)]
+0      [りんご, 赤, 1.20]
+1     [バナナ, 黄色, 0.50]
+2  [オレンジ, オレンジ, 0.80]
+3      [いちご, 赤, 2.50]
+4   [ブルーベリー, 青, 3.00]
+5      [キウイ, 緑, 1.00]
+6  [マンゴー, オレンジ, 1.50]
+7      [ぶどう, 紫, 2.00]
+2024-03-22 16:51:24.387 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 16:51:24.388 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest.pdf
+2024-03-22 16:51:24.389 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 16:51:24.501 | INFO     | translator.writer:_save_translated_book_pdf:117 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 16:51:24.569 | INFO     | translator.writer:_save_translated_book_pdf:127 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 16:52:09.633 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 16:52:09.637 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 16:52:09.765 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+tests/parserimages/page_2_image_0.png
+2024-03-22 16:52:09.766 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 16:52:16.848 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据
+这个数据集包含了两个测试样本，由OpenAI的AI语言模型ChatGPT提供。
+这些样本包括一个Markdown表格和一个英文文本段落，可用于测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过懒狗。这个全字母句包含了英语字母表中的每个字母至少一次。全字母句经常用于测试字体、键盘和其他与文本相关的工具。除了英语，许多其他语言中也有全字母句。有些全字母句由于语言的独特特点而更难构造。
+表格测试
+2024-03-22 16:52:16.850 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 16:52:22.409 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果      | 颜色    | 价格（美元） |
+|----------|-------|------------|
+| Apple    | 红色    | 1.20       |
+| Banana   | 黄色    | 0.50       |
+| Orange   | 橙色    | 0.80       |
+| Strawberry | 红色  | 2.50       |
+| Blueberry | 蓝色   | 3.00       |
+| Kiwi     | 绿色    | 1.00       |
+| Mango    | 橙色   | 1.50       |
+| Grape    | 紫色    | 2.00       |
+2024-03-22 16:52:22.410 | DEBUG    | book.content:set_translation:61 - | 水果      | 颜色    | 价格（美元） |
+|----------|-------|------------|
+| Apple    | 红色    | 1.20       |
+| Banana   | 黄色    | 0.50       |
+| Orange   | 橙色    | 0.80       |
+| Strawberry | 红色  | 2.50       |
+| Blueberry | 蓝色   | 3.00       |
+| Kiwi     | 绿色    | 1.00       |
+| Mango    | 橙色   | 1.50       |
+| Grape    | 紫色    | 2.00       |
+2024-03-22 16:52:22.410 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格（美元）'], ['----------', '-------', '------------'], ['Apple', '红色', '1.20'], ['Banana', '黄色', '0.50'], ['Orange', '橙色', '0.80'], ['Strawberry', '红色', '2.50'], ['Blueberry', '蓝色', '3.00'], ['Kiwi', '绿色', '1.00'], ['Mango', '橙色', '1.50'], ['Grape', '紫色', '2.00']]
+2024-03-22 16:52:22.411 | DEBUG    | book.content:set_translation:79 -            水果       颜色        价格（美元）
+0  ----------  -------  ------------
+1       Apple       红色          1.20
+2      Banana       黄色          0.50
+3      Orange       橙色          0.80
+4  Strawberry       红色          2.50
+5   Blueberry       蓝色          3.00
+6        Kiwi       绿色          1.00
+7       Mango       橙色          1.50
+8       Grape       紫色          2.00
+2024-03-22 16:52:22.415 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 16:52:22.415 | INFO     | translator.writer:_save_translated_book_markdown:134 - pdf_file_path: tests/test.pdf
+2024-03-22 16:52:22.416 | INFO     | translator.writer:_save_translated_book_markdown:135 - 开始翻译: tests/test_translated.md
+2024-03-22 16:52:22.417 | INFO     | translator.writer:_save_translated_book_markdown:168 - Image link added to Markdown file: parserimages\page_2_image_0.png
+2024-03-22 16:52:22.418 | INFO     | translator.writer:_save_translated_book_markdown:177 - 翻译完成: tests/test_translated.md
+2024-03-22 16:53:58.057 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 16:53:58.063 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 16:53:58.133 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_2_image_0.png
+2024-03-22 16:53:58.135 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为ja，记住是全部翻译为ja，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 16:54:04.617 | INFO     | translator.pdf_translator:translate_pdf_text:55 - テストデータ-Modfiy
+このデータセットは、OpenAIによるAI言語モデルであるChatGPTによって提供される2つのテストサンプルを含んでいます。
+これらのサンプルには、マークダウンテーブルと英文テキストが含まれており、テキストとテーブルの両方の形式をサポートする英中翻訳ソフトウェアのテストに使用することができます。
+
+テキストテスト
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related tools. In addition to English, there are pangrams in many other languages. Some pangrams are more difficult to construct due to the unique characteristics of the language.
+
+テーブルテスト
+2024-03-22 16:54:04.619 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为ja，记住是全部翻译为ja，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 16:54:07.384 | INFO     | translator.pdf_translator:translate_pdf_text:55 - [果物, 色, 価格（USD）]
+[リンゴ, 赤, 1.20]
+[バナナ, 黄色, 0.50]
+[オレンジ, オレンジ, 0.80]
+[イチゴ, 赤, 2.50]
+[ブルーベリー, 青, 3.00]
+[キウイ, 緑, 1.00]
+[マンゴー, オレンジ, 1.50]
+[ぶどう, 紫, 2.00]
+2024-03-22 16:54:07.385 | DEBUG    | book.content:set_translation:61 - [果物, 色, 価格（USD）]
+[リンゴ, 赤, 1.20]
+[バナナ, 黄色, 0.50]
+[オレンジ, オレンジ, 0.80]
+[イチゴ, 赤, 2.50]
+[ブルーベリー, 青, 3.00]
+[キウイ, 緑, 1.00]
+[マンゴー, オレンジ, 1.50]
+[ぶどう, 紫, 2.00]
+2024-03-22 16:54:07.385 | DEBUG    | book.content:set_translation:75 - [['[果物, 色, 価格（USD）]'], ['[リンゴ, 赤, 1.20]'], ['[バナナ, 黄色, 0.50]'], ['[オレンジ, オレンジ, 0.80]'], ['[イチゴ, 赤, 2.50]'], ['[ブルーベリー, 青, 3.00]'], ['[キウイ, 緑, 1.00]'], ['[マンゴー, オレンジ, 1.50]'], ['[ぶどう, 紫, 2.00]']]
+2024-03-22 16:54:07.386 | DEBUG    | book.content:set_translation:79 -      [果物, 色, 価格（USD）]
+0      [リンゴ, 赤, 1.20]
+1     [バナナ, 黄色, 0.50]
+2  [オレンジ, オレンジ, 0.80]
+3      [イチゴ, 赤, 2.50]
+4   [ブルーベリー, 青, 3.00]
+5      [キウイ, 緑, 1.00]
+6  [マンゴー, オレンジ, 1.50]
+7      [ぶどう, 紫, 2.00]
+2024-03-22 16:54:07.389 | INFO     | translator.pdf_translator:translate_pdf_text:63 - Skipping translation for image content at page 2, content 1
+2024-03-22 17:21:30.530 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 17:21:30.534 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 17:21:30.593 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/Desktop/parserimages/page_1_image_0.png
+2024-03-22 17:21:30.593 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为ja，记住是全部翻译为ja，并保持文本结构不变。将翻译结果按原文本格式呈现:TestingData
+Texttesting
+Text images contain both visual and linguistic informa tion. However, existing pre-training
+techniquesfortextrecognitionmainlyfocusoneithervisual representationlearning orlinguistic
+knowledgelearning.
+Inthispaper,weproposeanovelapproachMaskOCRtounifyvisionandlanguagepre-trainingin
+the classical encoder-decoder recognition framework. We adopt the masked image mod eling
+approach to pre-train the featureencoder using a largeset of unlabeled real text images, which
+allowsustolearnstrongvisualrepresentations.
+Tabletesting
+Picturetesting
+2024-03-22 17:21:36.946 | INFO     | translator.pdf_translator:translate_pdf_text:55 - TestingData
+Texttesting
+テキスト画像には、視覚的および言語的情報の両方が含まれています。 しかし、既存のテキスト認識の事前トレーニング技術は主に、視覚的表現学習または言語的知識学習のいずれかに焦点を当てています。
+ この論文では、古典的なエンコーダーデコーダー認識フレームワークでビジョンと言語の事前トレーニングを統一する新しいアプローチMaskOCRを提案します。 我々は、大量の未ラベルの実際のテキスト画像を使用して特徴エンコーダーを事前トレーニングするためにマスク画像モデリングアプローチを採用しており、これにより強力な視覚表現を学ぶことができます。
+Tabletesting
+Picturetesting
+2024-03-22 17:21:36.948 | DEBUG    | translator.pdf_translator:translate_pdf_text:53 - 你是一个全能翻译助手，支持多种语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为ja，记住是全部翻译为ja，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[fruits, colors, prices] [apples, red, 5.5] [pear, yellow, 3.73]
+2024-03-22 17:21:39.117 | INFO     | translator.pdf_translator:translate_pdf_text:55 - [果物, 色, 価格] [りんご, 赤, 5.5] [梨, 黄色, 3.73]
+2024-03-22 17:21:39.118 | DEBUG    | book.content:set_translation:61 - [果物, 色, 価格] [りんご, 赤, 5.5] [梨, 黄色, 3.73]
+2024-03-22 17:21:39.118 | DEBUG    | book.content:set_translation:75 - [['[果物, 色, 価格] [りんご, 赤, 5.5] [梨, 黄色, 3.73]']]
+2024-03-22 17:21:39.120 | DEBUG    | book.content:set_translation:79 - Empty DataFrame
+Columns: [[果物, 色, 価格] [りんご, 赤, 5.5] [梨, 黄色, 3.73]]
+Index: []
+2024-03-22 17:21:39.121 | INFO     | translator.pdf_translator:translate_pdf_text:63 - Skipping translation for image content at page 1, content 3
+2024-03-22 17:31:57.083 | DEBUG    | translator.pdf_parser:parse_pdf:58 - [raw_text]
+ Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 17:31:57.092 | DEBUG    | translator.pdf_parser:parse_pdf:64 - [table]
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 17:31:57.261 | DEBUG    | translator.pdf_parser:parse_pdf:92 - [image]
+C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 17:31:57.262 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个语言翻译专家，擅长多国语言翻译，你的目标是仔细阅读输入文字，然后把输入的文字全部翻译为中文，记住是全部翻译为中文，并保持文本结构不变。将翻译结果按原文本格式呈现:Test Data-Modfiy
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+2024-03-22 17:32:05.144 | INFO     | translator.pdf_translator:translate_pdf:28 - 测试数据-修改
+这个数据集包含了两个测试样本，由ChatGPT提供，这是一个由OpenAI开发的AI语言模型。
+这些样本包括一个Markdown表格和一个英文文本段落，可以用来测试支持文本和表格格式的英译中软件。
+文本测试
+敏捷的棕色狐狸跳过了懒狗。这个全字母句至少包含了英语字母表中的每一个字母。全字母句经常被用来测试字体、键盘和其他与文本相关的工具。除了英语，还有许多其他语言中也有全字母句。由于语言的独特特征，有些全字母句更难构建。
+表格测试
+2024-03-22 17:32:05.147 | DEBUG    | translator.pdf_translator:translate_pdf:26 - 你是一个语言翻译专家，支持多国语言翻译，你的目标是仔细阅读表格内容，然后把表格内容全部翻译为中文，记住是全部翻译为中文，并保持表格结构不变。将翻译结果按原表格格式呈现:
+[Fruit, Color, Price (USD)] [Apple, Red, 1.20] [Banana, Yellow, 0.50] [Orange, Orange, 0.80] [Strawberry, Red, 2.50] [Blueberry, Blue, 3.00] [Kiwi, Green, 1.00] [Mango, Orange, 1.50] [Grape, Purple, 2.00]
+2024-03-22 17:32:08.618 | INFO     | translator.pdf_translator:translate_pdf:28 - | 水果     | 颜色    | 价格（美元） |
+|----------|---------|--------------|
+| 苹果     | 红色    | 1.20         |
+| 香蕉     | 黄色    | 0.50         |
+| 橙子     | 橙色    | 0.80         |
+| 草莓     | 红色    | 2.50         |
+| 蓝莓     | 蓝色    | 3.00         |
+| 猕猴桃   | 绿色    | 1.00         |
+| 芒果     | 橙色    | 1.50         |
+| 葡萄     | 紫色    | 2.00         |
+2024-03-22 17:32:08.619 | DEBUG    | book.content:set_translation:61 - | 水果     | 颜色    | 价格（美元） |
+|----------|---------|--------------|
+| 苹果     | 红色    | 1.20         |
+| 香蕉     | 黄色    | 0.50         |
+| 橙子     | 橙色    | 0.80         |
+| 草莓     | 红色    | 2.50         |
+| 蓝莓     | 蓝色    | 3.00         |
+| 猕猴桃   | 绿色    | 1.00         |
+| 芒果     | 橙色    | 1.50         |
+| 葡萄     | 紫色    | 2.00         |
+2024-03-22 17:32:08.620 | DEBUG    | book.content:set_translation:75 - [['水果', '颜色', '价格（美元）'], ['----------', '---------', '--------------'], ['苹果', '红色', '1.20'], ['香蕉', '黄色', '0.50'], ['橙子', '橙色', '0.80'], ['草莓', '红色', '2.50'], ['蓝莓', '蓝色', '3.00'], ['猕猴桃', '绿色', '1.00'], ['芒果', '橙色', '1.50'], ['葡萄', '紫色', '2.00']]
+2024-03-22 17:32:08.621 | DEBUG    | book.content:set_translation:79 -            水果         颜色          价格（美元）
+0  ----------  ---------  --------------
+1          苹果         红色            1.20
+2          香蕉         黄色            0.50
+3          橙子         橙色            0.80
+4          草莓         红色            2.50
+5          蓝莓         蓝色            3.00
+6         猕猴桃         绿色            1.00
+7          芒果         橙色            1.50
+8          葡萄         紫色            2.00
+2024-03-22 17:32:08.625 | INFO     | translator.pdf_translator:translate_pdf:34 - Skipping translation for image content at page 2, content 1
+2024-03-22 17:32:08.626 | INFO     | translator.writer:_save_translated_book_pdf:33 - pdf_file_path: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest.pdf
+2024-03-22 17:32:08.626 | INFO     | translator.writer:_save_translated_book_pdf:34 - 开始翻译: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
+2024-03-22 17:32:08.741 | INFO     | translator.writer:_save_translated_book_pdf:117 - Image added to story: C:/Users/zf/openai-quickstart/openai-translator/ai_translator/uploads/parserimages/page_2_image_0.png
+2024-03-22 17:32:08.807 | INFO     | translator.writer:_save_translated_book_pdf:127 - 翻译完成: C:\Users\zf\openai-quickstart\openai-translator\ai_translator\uploads\mytest_translated.pdf
